@@ -1,8 +1,7 @@
 #!/bin/sh
 
-# this pack is valid for apps with a hello.txt in the root
-if [ -f $1/hello.txt ]; then
-  echo "HelloFramework"
+if [ -f $1/init.el ]; then
+  echo "Emacs Lisp"
   exit 0
 else
   exit 1

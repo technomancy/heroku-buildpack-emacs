@@ -4,13 +4,9 @@ indent() {
   sed -u 's/^/       /'
 }
 
-echo "-----> Found a hello.txt"
+echo "-----> Found an init.el file."
 
-# if hello.txt is empty, abort the build
-if [ ! -s $1/hello.txt ]; then
-  echo "hello.txt was empty" | indent
-  exit 1
-fi
-
-# replace hello with goodbye in a new file
-cat $1/hello.txt | sed -e "s/[Hh]ello/Goodbye/g" > $1/goodbye.txt
+# TODO: cache this
+echo "Downloading Emacs 24 pretest from http://p.hagelb.org/emacs.tar.gz..." | indent
+curl -s -o $1/emacs.tar.gz http://p.hagelb.org/emacs.tar.gz
+echo "...done" | indent
