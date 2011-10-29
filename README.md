@@ -22,7 +22,7 @@ with [Elnode](http://www.emacswiki.org/emacs/Elnode).
 ```
 
     # requires heroku gem version 2.11.0+
-    $ heroku create --stack cedar --buildpack http://github.com/heroku/heroku-buildpack-emacs.git
+    $ heroku create --stack cedar --buildpack http://github.com/technomancy/heroku-buildpack-emacs.git
 
     $ git push heroku master
     ...
