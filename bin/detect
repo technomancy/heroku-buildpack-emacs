@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -f $1/elnodeboot.el ]; then
+if [ -f $1/start-elnode.el ]; then
   echo "Emacs Lisp"
   exit 0
 else
