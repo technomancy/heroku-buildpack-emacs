@@ -53,10 +53,8 @@ Emacs before running and symlink it to /tmp/emacs, like this:
 
     web: tar xzf emacs.tar.gz && ln -s $PWD/emacs /tmp/emacs; emacs/bin/emacs --daemon --load start-elnode.el
 
-This is obviously undesired since it means other users could interfere
-with this symlink, so a way to compile Emacs without referring to the
-/tmp directory needs to be discovered. Until then, don't use this
-buildpack for anything you would need to keep secure.
+
+## Re-compiling the buildpack Emacs
 
 The current Emacs tarball is compiled from the pretest of version 24
 with this invocation:
