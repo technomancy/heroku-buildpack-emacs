@@ -7,6 +7,6 @@ indent() {
 echo "-----> Found an init.el file."
 
 # TODO: cache this
-echo "Downloading Emacs 24 pretest from http://p.hagelb.org/emacs.tar.gz..." | indent
-curl -s -o $1/emacs.tar.gz http://p.hagelb.org/emacs.tar.gz
+echo "Downloading Emacs 24 pretest from github..." | indent
+curl -L -s -o $1/emacs.tar.gz https://github.com/downloads/nicferrier/heroku-buildpack-emacs/static-emacs.tar.gz
 echo "...done" | indent
