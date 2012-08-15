@@ -11,11 +11,10 @@ Make a git repository with a file start-elnode.el:
 
 ```lisp
 ;;; start-elnode.el
-(add-to-list package-archives "http://marmalade-repo.org/packages/")
+(setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")))
 (package-initialize)
 (package-refresh-contents)
 (package-install 'elnode)
-(require 'elnode)
 
 (defun handler (httpcon)
   "Demonstration function"
@@ -34,8 +33,7 @@ Make a git repository with a file start-elnode.el:
 
 add heroku as a remote to the repo:
 
-    $ heroku create --stack cedar \
-       --buildpack http://github.com/nicferrier/heroku-buildpack-emacs.git
+    $ heroku create --stack cedar --buildpack http://github.com/nicferrier/heroku-buildpack-emacs.git
     
 and then deploy the app by pushing to heroku:
 
@@ -45,7 +43,7 @@ and then deploy the app by pushing to heroku:
     -----> Fetching custom buildpack
     -----> Emacs Lisp app detected
     -----> Downloading Emacs 24.0.50.1
-           Downloading Emacs 24 pretest from http://p.hagelb.org/emacs.tar.gz...
+           Downloading Emacs 24 pretest from github
            ...done
 
 The buildpack will detect that your app has a `start-elnode.el` in the root
